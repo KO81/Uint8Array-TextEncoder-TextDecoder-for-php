@@ -39,7 +39,7 @@ class TextEncoder{
 	}
 };
 class TextDecoder{
-	public $txt,$array=[];
+	public $txt,$array=[],$result;
 	function decode($txt=[]){
 		try{$this->txt=json_decode(json_encode($txt,true),true);
 			foreach($this->txt['array'] as $k => $v)array_push($this->array,str_pad(str($v),8,'0',STR_PAD_LEFT));
