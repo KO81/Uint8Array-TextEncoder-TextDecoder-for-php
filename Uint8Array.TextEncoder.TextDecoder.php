@@ -43,7 +43,8 @@ class TextDecoder{
 	function decode($txt=[]){
 		try{$this->txt=json_decode(json_encode($txt,true),true);
 			foreach($this->txt['array'] as $k => $v)array_push($this->array,str_pad(str($v),8,'0',STR_PAD_LEFT));
-			return sT(implode('',$this->array));
+			$this->result=sT(implode('',$this->array));			// more object based
+			//return sT(implode('',$this->array));				// less object based
 		}catch(exception $e){return 'not valid Uint8Array';
 		}
 	}
